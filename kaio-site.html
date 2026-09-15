@@ -1,0 +1,321 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Kaio Ribeiro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Manrope:wght@400;500;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0908;
+    --surface:#17140F;
+    --surface-2:#1E1A12;
+    --ink:#F4EEDE;
+    --ink-soft:#B7A97E;
+    --gold:#D4AF37;
+    --gold-bright:#F1CE6B;
+    --gold-dim:#8A722C;
+    --line:#3A3020;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    padding-inline:20px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  [hidden]{display:none!important;}
+
+  h1,h2,h3{text-wrap:balance;margin:0;}
+  .display{font-family:'Righteous', system-ui, sans-serif; font-weight:400; letter-spacing:0.01em;}
+  .mono{font-family:'IBM Plex Mono', 'Courier New', monospace; letter-spacing:0.08em; text-transform:uppercase;}
+
+  .wrap{max-width:1080px; margin-inline:auto;}
+
+  /* ---------- NAV ---------- */
+  nav.topbar{
+    position:sticky; top:env(safe-area-inset-top, 0px);
+    z-index:20;
+    display:flex; align-items:center; justify-content:space-between;
+    padding-block:14px;
+    background:color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    margin-inline:-20px; padding-inline:20px;
+  }
+  .logo-mark{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Righteous', sans-serif;
+    font-size:1.05rem;
+    color:var(--ink);
+  }
+  .logo-mark .dot{
+    width:34px;height:34px;border-radius:50%;
+    background:linear-gradient(145deg, var(--gold-bright), var(--gold-dim));
+    display:flex;align-items:center;justify-content:center;
+    color:#161200; font-size:0.9rem; font-weight:700; font-family:'Manrope',sans-serif;
+    border:1px solid var(--gold-bright);
+  }
+  .nav-cta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;
+    background:linear-gradient(145deg, var(--gold-bright), var(--gold));
+    color:#1B1400;
+    padding:10px 16px; border-radius:4px;
+    border:1px solid var(--gold-bright);
+    text-decoration:none;
+    transition:filter .15s ease, transform .15s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{filter:brightness(1.12); transform:translateY(-1px);}
+  .nav-cta:active{transform:translateY(0); filter:brightness(0.96);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding-block:64px 44px;
+    max-width:640px;
+    position:relative;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-60px; right:-140px;
+    width:420px; height:420px;
+    background:radial-gradient(circle, rgba(212,175,55,0.16), transparent 70%);
+    pointer-events:none;
+    z-index:-1;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.72rem; font-weight:600;
+    color:var(--gold-bright);
+    border:1px solid var(--gold-dim);
+    padding:6px 12px; border-radius:100px;
+    margin-bottom:20px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold-bright);}
+  .hero h1{
+    font-size:clamp(2.6rem, 8vw, 5.4rem);
+    line-height:0.98;
+    color:var(--ink);
+  }
+  .hero h1 .line2{
+    display:block;
+    background:linear-gradient(120deg, var(--gold-bright), var(--gold) 60%, var(--gold-dim));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero p.lede{
+    font-size:clamp(1.05rem, 2.2vw, 1.3rem);
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-top:20px;
+    font-weight:500;
+  }
+  .cta-row{display:flex; flex-wrap:wrap; gap:14px; margin-top:30px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase;
+    padding:14px 22px; border-radius:4px;
+    text-decoration:none;
+    transition:transform .15s ease, filter .15s ease, background .15s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{
+    background:linear-gradient(145deg, var(--gold-bright), var(--gold));
+    color:#1B1400; border:1px solid var(--gold-bright);
+  }
+  .btn-primary:hover{filter:brightness(1.1); transform:translateY(-1px);}
+  .btn-ghost{
+    background:transparent; color:var(--ink);
+    border:1px solid var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold-bright);}
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    padding-block:34px 50px;
+    border-top:1px solid var(--line);
+  }
+  .about .tag{
+    font-size:0.75rem; font-weight:700; color:var(--gold);
+    margin-bottom:10px; display:block;
+  }
+  .about h2{
+    font-size:clamp(1.7rem, 4.5vw, 2.5rem);
+    max-width:16ch;
+    color:var(--ink);
+  }
+  .about p{
+    color:var(--ink-soft); font-size:1.05rem; line-height:1.65;
+    max-width:62ch; margin-top:16px; font-weight:500;
+  }
+
+  /* ---------- PRICING ---------- */
+  .pricing{padding-block:20px 56px; border-top:1px solid var(--line);}
+  .pricing > .mono{color:var(--gold); font-size:0.75rem; font-weight:600;}
+  .pricing h2{font-size:clamp(1.7rem, 4.5vw, 2.5rem); margin-top:8px; color:var(--ink);}
+  .pricing .lede{color:var(--ink-soft); margin-top:12px; max-width:60ch; font-size:1rem;}
+  .plan-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;
+    margin-top:30px; align-items:stretch;
+  }
+  .plan{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px 24px;
+    display:flex; flex-direction:column; gap:16px;
+  }
+  .plan.top{
+    background:linear-gradient(165deg, var(--surface-2), var(--surface));
+    border:1px solid var(--gold-dim);
+    box-shadow:0 0 0 1px var(--gold-dim), 0 18px 40px -20px rgba(212,175,55,0.35);
+  }
+  .plan .tier{
+    font-size:0.72rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .plan.top .tier{color:var(--gold-bright);}
+  .plan h3{font-family:'Righteous', sans-serif; font-weight:400; font-size:1.4rem; color:var(--ink);}
+  .price{display:flex; align-items:baseline; gap:6px;}
+  .price .from{font-size:0.75rem; color:var(--ink-soft);}
+  .price .amount{
+    font-family:'Righteous', sans-serif; font-size:2.1rem;
+    background:linear-gradient(120deg, var(--gold-bright), var(--gold));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .plan p.desc{color:var(--ink-soft); font-size:0.94rem; line-height:1.55; font-weight:500; margin:0;}
+  .plan ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
+  .plan li{
+    display:flex; align-items:flex-start; gap:9px;
+    font-size:0.88rem; color:var(--ink); font-weight:500;
+  }
+  .plan li::before{content:"◆"; color:var(--gold); font-size:0.6rem; margin-top:5px;}
+  .plan-note{
+    margin-top:20px; font-size:0.85rem; color:var(--ink-soft);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{padding-block:50px 60px;}
+  .sign{
+    border:1px solid var(--gold-dim);
+    background:radial-gradient(circle at 50% 0%, var(--surface-2), var(--surface) 70%);
+    border-radius:20px;
+    padding:clamp(32px, 6vw, 56px);
+    text-align:center;
+  }
+  .sign h2{
+    font-family:'Righteous', sans-serif;
+    font-size:clamp(2rem, 6vw, 3.2rem);
+    background:linear-gradient(120deg, var(--gold-bright), var(--gold));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .sign p{
+    color:var(--ink-soft);
+    margin-top:12px; font-size:1.05rem; font-weight:500;
+  }
+  .sign .cta-row{justify-content:center; margin-top:28px;}
+  .contact-details{
+    margin-top:26px; display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:center;
+    font-family:'IBM Plex Mono', monospace; font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+
+  footer{
+    padding-block:26px 40px;
+    text-align:center;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:760px){
+    .plan-grid{grid-template-columns:1fr;}
+  }
+</style>
+
+<nav class="topbar">
+  <div class="logo-mark"><span class="dot">KR</span>Kaio Ribeiro</div>
+  <a class="nav-cta" href="https://wa.me/5511975331739?text=Oi%20Kaio%2C%20vi%20seu%20site%20e%20quero%20conversar" target="_blank" rel="noopener">Chamar no zap</a>
+</nav>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="eyebrow mono">Criação de sites</span>
+      <h1 class="display">Kaio<span class="line2">Ribeiro</span></h1>
+      <p class="lede">Eu crio sites rápidos, bonitos e pensados pra converter visita em cliente. E o site que você tá lendo agora? É a prova disso.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://wa.me/5511975331739?text=Oi%20Kaio%2C%20vi%20seu%20site%20e%20quero%20conversar" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <span class="tag mono">Sobre</span>
+    <h2 class="display">Esse site é o portfólio</h2>
+    <p>Cada seção, cada botão e cada cor daqui foram pensados do mesmo jeito que eu penso um projeto pra qualquer cliente: identidade que chama atenção, estrutura clara e um caminho direto até o contato. Se em poucos segundos você já entendeu o que eu faço, é porque o site tá fazendo o trabalho dele — e é exatamente isso que eu construo pra quem trabalha comigo.</p>
+  </section>
+
+  <section class="pricing">
+    <span class="mono">Planos</span>
+    <h2 class="display">Do essencial ao completo</h2>
+    <p class="lede">Três faixas de investimento pra cada momento do seu projeto. Os valores abaixo são o ponto de partida — o escopo final é sempre conversado antes de fechar.</p>
+    <div class="plan-grid">
+      <div class="plan">
+        <span class="tier mono">Essencial</span>
+        <div class="price"><span class="from mono">a partir de</span><span class="amount">R$150</span></div>
+        <p class="desc">Landing page de uma página, pronta pra divulgar um produto, serviço ou evento.</p>
+        <ul>
+          <li>1 página, design responsivo</li>
+          <li>Botão de contato direto (WhatsApp)</li>
+          <li>Entrega rápida</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <span class="tier mono">Profissional</span>
+        <div class="price"><span class="from mono">a partir de</span><span class="amount">R$300</span></div>
+        <p class="desc">Site institucional com mais seções pra apresentar sua marca com profundidade.</p>
+        <ul>
+          <li>Até 4 seções (sobre, serviços, contato...)</li>
+          <li>SEO básico pra aparecer no Google</li>
+          <li>Formulário de contato</li>
+        </ul>
+      </div>
+      <div class="plan top">
+        <span class="tier mono">Premium</span>
+        <div class="price"><span class="from mono">a partir de</span><span class="amount">R$500</span></div>
+        <p class="desc">Site completo, com identidade visual personalizada e otimizações extras.</p>
+        <ul>
+          <li>Páginas ilimitadas</li>
+          <li>Identidade visual sob medida</li>
+          <li>Otimização de performance + suporte pós-entrega</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="sign">
+      <h2>Bora conversar?</h2>
+      <p>Me chama no WhatsApp — eu respondo rápido.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://wa.me/5511975331739?text=Oi%20Kaio%2C%20vi%20seu%20site%20e%20quero%20conversar" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+      <div class="contact-details">
+        <span>(11) 97533-1739</span>
+        <span>São Paulo, SP</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Kaio Ribeiro. Site feito por mim mesmo — literalmente.</footer>
+
+</body></html>
